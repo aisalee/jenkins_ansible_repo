@@ -1,21 +1,21 @@
-#Create the user 
-useradd ansible 
+1. Create the user 
+     useradd ansible 
 
-##Create the password
-echo "1234" | passwd --stdin ansible
+2. Create the password
+    passwd --stdin ansible
 
-##Switch as ansible user
-su - ansible
+## Below steps are required for the ansible functionality
+3. Switch as ansible user
+     su - ansible
 
-#Create the home directory
-mkdir /home/ansible/.ssh
-chmod 700 /home/ansible/.ssh
-cd /home/ansible/.ssh
-ssh-keygen
-Copy the .pub to the authorized_keys file in the ansible client nodes.
+4. Create the home directory and generate the ssh keys
+     mkdir /home/ansible/.ssh
+     chmod 700 /home/ansible/.ssh
+     cd /home/ansible/.ssh
+     ssh-keygen
 
-logout
+5.Copy the"id_rsa.pub" to the /home/ansible/authorized_keys file in the ansible client nodes.
 
-#Enable sudo privileges for the user
-vi /etc/sudoers.d/ansible
-ansible ALL=(ALL) NOPASSWD:ALL
+6. Enable sudo privileges for the user
+    vi /etc/sudoers.d/ansible
+      ansible ALL=(ALL) NOPASSWD:ALL

@@ -1,0 +1,17 @@
+---
+- name: Playbook to restart the crond service
+  hosts: all
+  tasks:
+    - name: Restart crond
+      service:
+        name: crond
+        state: restarted
+        enabled: yes
+
+    - name: Check the service status
+      shell: "echo `systemctl status crond|grep -i active`"
+      register: service_status
+
+    - name: Display the status
+      debug:
+        msg: "{{ service_status }}"

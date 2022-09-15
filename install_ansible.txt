@@ -13,4 +13,11 @@
       ansible --version
 
 5. Update the ansible.cfg file in the following section
-s
+   [defaults]
+    remote_user = ansible
+
+   [privilege_escalation]
+     become=True
+     become_user=root
+     become_ask_pass=False
+

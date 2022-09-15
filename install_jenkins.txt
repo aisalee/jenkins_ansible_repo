@@ -1,0 +1,23 @@
+#### How to install Jenkins ############
+
+1. Get the jenkins repository from Jenkins home
+     wget -O /etc/yum.repos.d/jenkins.repo \
+         https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+2. Import the jenkins key
+    rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+3. Perform a system upgrade
+    yum upgrade
+
+4. Add required dependencies for the jenkins package
+    yum install java-11-openjdk
+
+5. Install Jenkins service and reload the daemon
+    yum install jenkins
+    systemctl daemon-reload
+
+6. Create the user and make the configuration changes as mentioned in "jenkins_ansible_user.txt & start_jenkins_service_using_ansible_user.txt"
+
+7. Enable the jenkins service to start during the system startup
+     systemctl enable jenkins
