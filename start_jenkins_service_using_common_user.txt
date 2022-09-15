@@ -1,0 +1,20 @@
+################# To start the Jenkins service as ansible user ( or any different user)
+
+1. update JENKINS_USER as ansible in the file /etc/sysconfig/jenkins
+    vi /etc/sysconfig/jenkins
+      JENKINS_USER="ansible"
+
+2. Update the ownership of the jenkins home,log,cache and run directory as ansible:ansible
+    chown -R ansible:ansible /var/cache/jenkins/ /var/lib/jenkins/ /var/log/jenkins/
+
+3, Edit the systemd configuration for jenkins and update the parameters in [ services ] section
+    systemctl edit jenkins
+
+      [Service]
+      TimeoutStartSec=120
+      User=ansible
+      Group=ansible
+
+4. Start the jenkins service
+     systemctl start jenkins
+

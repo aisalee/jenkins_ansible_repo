@@ -1,0 +1,16 @@
+###### Follow the below steps to install ansible in the system
+
+1. Perform a system update
+    yum update
+
+2. Install EPEL Repository
+     yum install epel-release
+
+3. Install ansible
+     yum install ansible
+
+4. Validate the ansible version
+      ansible --version
+
+5. Update the ansible.cfg file in the following section
+s

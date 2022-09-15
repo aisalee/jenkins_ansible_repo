@@ -11,5 +11,6 @@ This repository describes the steps to install jenkins and run ansible playbooks
 7. Install ansible plugins in Jenkins GUI
 8. Create your first Job in Jenkins 
 
+The installation notes has been uploaded separately. 
 
-----HAVALA you are done !!!
+----HVALA you are done !!! ------------
