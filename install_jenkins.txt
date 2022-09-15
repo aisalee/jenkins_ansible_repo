@@ -21,3 +21,5 @@
 
 7. Enable the jenkins service to start during the system startup
      systemctl enable jenkins
+
+8. Once the jenkins service is started, access the jenkins GUI and install Ansible Plugins from the Manage Jenkins Option - Please refer to the Jenkins_Ansible_Integration_Screens. 
